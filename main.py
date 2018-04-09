@@ -1,5 +1,6 @@
 import sys, pygame
 from player import * 
+from score import *
 from pygame.locals import *
 import random
 import time
@@ -54,9 +55,10 @@ while lives > 0:
 			time1 = time.time()
 			hits= hits + 1
 			lives = lives - 1
-			print(score, lives)	
 
 	screen.fill(black)
 	all_sprites.draw(screen)
+	draw_text_center_top(screen,"score: "+str(score), 18, WIDTH/2, 10)
+	draw_text_center_top(screen, "lives: "+ str(lives),18, WIDTH/2, 30)
 	pygame.display.flip()
 
